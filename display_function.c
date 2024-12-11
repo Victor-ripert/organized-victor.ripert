@@ -10,5 +10,5 @@
 
 void display_function(void *data)
 {
-    printf("data = %s\n", data);
+    printf("data = %s\n", (char *)data);
 }

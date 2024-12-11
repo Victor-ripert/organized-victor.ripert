@@ -9,11 +9,13 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-void push_to_list(linked_list_t **begin, void *data)
+void push_to_list(linked_list_t **begin, void *data, material_t type, int id)
 {
     linked_list_t *temp = malloc(sizeof(linked_list_t));
 
     temp->data = data;
+    temp->type = type;
+    temp->id = id;
     temp->previous = NULL;
     temp->next = *begin;
     if ((*begin) == NULL) {
@@ -22,4 +24,5 @@ void push_to_list(linked_list_t **begin, void *data)
         (*begin)->previous = temp;
         (*begin) = temp;
     }
+    display_node_add(temp);
 }

@@ -10,5 +10,14 @@
 
 void del(void *data, char **args)
 {
-    printf("Del\n");
+    linked_list_t **head = data;
+    int ref;
+
+    if (args != NULL) { //regler probleme del sans arguemnts (refler problèmes avec les agrs tout court).
+        ref = str_to_nbr(args[0]);
+        printf("Del\n");
+        delete_node(head, ref);
+    } else  {
+        printf("No list here !!\n");
+    }
 }

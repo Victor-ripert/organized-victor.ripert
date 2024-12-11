@@ -11,12 +11,20 @@
 void add(void *data, char **args)
 {
     linked_list_t **head = data;
-    printf("Add\n");
-    display_char_array(args);
-    //display_list(head, &display_function);
-    char *argument = args[0];
-    // char *argument2 = args[1];
-    push_to_list(head, argument);
-    // push_to_list(&head, argument2);
-    display_list((*head), &display_function);
+    int i = 0;
+    char *argument;
+    material_t type;
+    int id = 0;
+
+    while (args[i] != NULL) {
+        type = material_type(args[i]);
+        if (args[i + 1] != NULL) {
+            argument = my_str_dup(args[i + 1]);
+            id = find_biggest_id(*head) + 1;
+            if (type != UNKNOWN) {
+                push_to_list(head, argument, type, id);
+            }
+        }
+        i += 2;
+    }
 }

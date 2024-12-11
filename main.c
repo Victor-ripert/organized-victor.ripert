@@ -73,6 +73,8 @@ int main (void)
     list->data = first_node;
     list->next = NULL;
     list->previous = NULL;
+    list->type = ACTUATOR;
+    list->id = 0;
     display_list(list, &display_function);
     while (x != 0) {
         x = workshop_shell(&list);

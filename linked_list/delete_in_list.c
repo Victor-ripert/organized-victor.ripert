@@ -8,18 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void replace_ptr(linked_list_t **temp, linked_list_t **begin)
-{
-    if ((*temp)->previous != NULL) {
-        (*temp)->previous->next = (*temp)->next;
-    } else {
-        *begin = (*temp)->next;
-    }
-    if ((*temp)->next != NULL) {
-        (*temp)->next->previous = (*temp)->previous;
-    }
-}
-
 void delete_in_list(linked_list_t **begin, void const *ref, int (*cmp_fct)())
 {
     linked_list_t *temp;

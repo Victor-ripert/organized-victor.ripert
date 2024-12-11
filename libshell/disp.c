@@ -10,9 +10,8 @@
 
 void disp(void *data, char **args)
 {
-    printf("Disp\n");
-    // display_char_array(args);
-    // linked_list_t *head = data;
-    linked_list_t *temp = data;
-    display_list(temp, &display_function);
+    linked_list_t **temp = data;
+    if (temp != NULL) {
+        display_list((*temp), &display_function);
+    }
 }
