@@ -1,0 +1,6 @@
+add WIRES c, ACTUATOR z, SENSOR b, PROCESSOR a, DEVICES j
+add WIRES bateau, SENSOR apple, WIRES zorglub, WIRES bac, WIRES bootstrap, ACTUATOR coca, SENSOR write, PROCESSOR quitter
+disp
+sort
+disp
+exit

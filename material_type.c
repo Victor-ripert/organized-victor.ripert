@@ -8,16 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int str_compare(char *str, char *compare)
-{
-    for (int i = 0; str[i] != '\0' && compare[i] != 0; i++) {
-        if (str[i] != compare[i]) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
 material_t material_type(char *type)
 {
     str_to_material_t tab[6] = {

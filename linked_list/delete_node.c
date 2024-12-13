@@ -15,6 +15,7 @@ void delete_node(linked_list_t **begin, int ref)
     temp = *begin;
     while (temp != NULL) {
         if (temp->id == ref) {
+            display_node_del(temp);
             replace_ptr(&temp, begin);
             free(temp);
             temp = *begin;

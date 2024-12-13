@@ -14,6 +14,7 @@ SRC =	main.c	\
 	linked_list/select_sort.c	\
 	linked_list/display_node.c	\
 	linked_list/display_node_add.c	\
+	linked_list/display_node_del.c	\
 	linked_list/delete_node.c	\
 	linked_list/replace_ptr.c	\
 	libshell/add.c	\
@@ -24,10 +25,13 @@ SRC =	main.c	\
 	display_function.c	\
 	my_str_dup.c	\
 	material_type.c	\
+	sort_material_type.c	\
 	find_biggest_id.c	\
 	material_to_str.c	\
 	str_to_nbr.c	\
-	my_strlen.c
+	my_strlen.c	\
+	my_strcmp.c	\
+	str_compare.c
 
 NAME	=	organized
 

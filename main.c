@@ -44,10 +44,11 @@ int compare_function(void *data, void *ref)
 
 int main (void)
 {
+    printf("Changer \"WIRES\" -> \"WIRE\"\n");
     // linked_list_t *list;
 
     // list = NULL;
-    int a = 1;
+    //int a = 1;
     int x = 1;
     // int b = 2;
     // int c = 3;
@@ -66,16 +67,19 @@ int main (void)
     // //delete_in_list(&list, &a, &compare_function);
     // printf("after delete\n");
     // display_list(list, &display_function);
+
+    // char *a = "bonjour";
+    // char *b = "apple";
+    // printf("strcmp(%s, %s) == %d\n", a, b, my_strcmp(a, b));
+
     char *first_node = "first_node";
     linked_list_t *list = malloc(sizeof(linked_list_t));
-
-    // push_to_list(&list, &first_node);
     list->data = first_node;
     list->next = NULL;
     list->previous = NULL;
     list->type = ACTUATOR;
     list->id = 0;
-    display_list(list, &display_function);
+    // display_list(list, &display_function);
     while (x != 0) {
         x = workshop_shell(&list);
         //printf("x = %d\n", x);
