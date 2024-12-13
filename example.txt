@@ -1,6 +1,15 @@
 add WIRES c, ACTUATOR z, SENSOR b, PROCESSOR a, DEVICES j
-add WIRES bateau, SENSOR apple, WIRES zorglub, WIRES bac, WIRES bootstrap, ACTUATOR coca, SENSOR write, PROCESSOR quitter
 disp
-sort
+sort ID
+disp
+sort ID -r
+disp
+sort NAME
+disp
+sort NAME -r
+disp
+sort ID
+disp
+sort ID -r
 disp
 exit

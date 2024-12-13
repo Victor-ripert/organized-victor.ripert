@@ -10,5 +10,8 @@
 
 void display_function(void *data)
 {
-    printf("data = %s\n", (char *)data);
+    my_putstr("data = ");
+    my_putstr((char *)data);
+    my_putstr("\n");
+    //printf("data = %s\n", (char *)data);
 }

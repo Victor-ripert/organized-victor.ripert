@@ -21,17 +21,19 @@ SRC =	main.c	\
 	libshell/del.c	\
 	libshell/sort.c	\
 	libshell/disp.c	\
-	display_char_array.c	\
 	display_function.c	\
-	my_str_dup.c	\
-	material_type.c	\
-	sort_material_type.c	\
-	find_biggest_id.c	\
-	material_to_str.c	\
-	str_to_nbr.c	\
-	my_strlen.c	\
-	my_strcmp.c	\
-	str_compare.c
+	material/material_type.c	\
+	material/sort_material_type.c	\
+	material/find_biggest_id.c	\
+	material/material_to_str.c	\
+	str_function/str_to_nbr.c	\
+	str_function/my_strlen.c	\
+	str_function/my_strcmp.c	\
+	str_function/my_str_dup.c	\
+	str_function/str_compare.c	\
+	str_function/my_putstr.c	\
+	str_function/my_putchar.c	\
+	str_function/my_put_nbr.c
 
 NAME	=	organized
 
