@@ -53,9 +53,8 @@ typedef struct linked_list_s {
     struct linked_list_s *next;
 } linked_list_t;
 
-int print_typed_value(void *data, type_t type);
 void delete_in_list(linked_list_t **begin, void const *ref, int (*cmp_fct)());
-void display_list(linked_list_t *begin, void (*disp_fct)());
+void display_list(linked_list_t *begin);
 void push_to_list(linked_list_t **begin, void *data, material_t type, int id);
 void swap_in_list(linked_list_t **first_node, linked_list_t **second_node);
 void select_sort(linked_list_t **head, sort_type_t type, int is_reversed);

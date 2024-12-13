@@ -12,6 +12,6 @@ void disp(void *data, char **args)
 {
     linked_list_t **temp = data;
     if (temp != NULL) {
-        display_list((*temp), &display_function);
+        display_list((*temp));
     }
 }

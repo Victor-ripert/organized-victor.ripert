@@ -6,7 +6,6 @@
 ##
 
 SRC =	main.c	\
-	enum/print_typed_value.c	\
 	linked_list/delete_in_list.c	\
 	linked_list/display_list.c	\
 	linked_list/push_to_list.c	\
