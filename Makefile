@@ -21,7 +21,6 @@ SRC =	main.c	\
 	libshell/del.c	\
 	libshell/sort.c	\
 	libshell/disp.c	\
-	display_function.c	\
 	material/material_type.c	\
 	material/sort_material_type.c	\
 	material/find_biggest_id.c	\
@@ -33,7 +32,8 @@ SRC =	main.c	\
 	str_function/str_compare.c	\
 	str_function/my_putstr.c	\
 	str_function/my_putchar.c	\
-	str_function/my_put_nbr.c
+	str_function/my_put_nbr.c	\
+	str_function/display_function.c
 
 NAME	=	organized
 
