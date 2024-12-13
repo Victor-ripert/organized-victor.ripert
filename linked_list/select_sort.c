@@ -9,77 +9,85 @@
 #include <stdlib.h>
 #include <string.h>
 
-int sort_compare_reversed(linked_list_t *minimum, linked_list_t *current, sort_type_t sort)
+int sort_compare_rev(linked_list_t *min, linked_list_t *cur, sort_type_t sort)
 {
     int strcmp_result = 0;
+
     if (sort == ID) {
-        if (current->id > minimum->id) {
+        if (cur->id > min->id) {
             return 1;
         }
     }
     if (sort == NAME) {
-        strcmp_result = my_strcmp((char *)current->data, (char *)minimum->data);
-        if ( strcmp_result > 0) {
+        strcmp_result = my_strcmp((char *)cur->data, (char *)min->data);
+        if (strcmp_result > 0) {
             return 1;
         }
     }
     if (sort == TYPE) {
-        if (current->type > minimum->type) {
+        if (cur->type > min->type) {
             return 1;
         }
     }
     return 0;
 }
 
-int sort_compare_normal(linked_list_t *minimum, linked_list_t *current, sort_type_t sort)
+int sort_cmp_normal(linked_list_t *min, linked_list_t *cur, sort_type_t sort)
 {
     int strcmp_result = 0;
+
     if (sort == ID) {
-        if (current->id < minimum->id) {
+        if (cur->id < min->id) {
             return 1;
         }
     }
     if (sort == NAME) {
-        strcmp_result = my_strcmp((char *)current->data, (char *)minimum->data);
-        if ( strcmp_result < 0) {
+        strcmp_result = my_strcmp((char *)cur->data, (char *)min->data);
+        if (strcmp_result < 0) {
             return 1;
         }
     }
     if (sort == TYPE) {
-        if (current->type < minimum->type) {
+        if (cur->type < min->type) {
             return 1;
         }
     }
     return 0;
 }
 
-int sort_compare(linked_list_t *minimum, linked_list_t *current, sort_type_t sort, int is_reversed)
+int sort_cmp(linked_list_t *min, linked_list_t *cur, sort_type_t sort, int rev)
 {
-    if (is_reversed == 0) {
-        return sort_compare_normal(minimum, current, sort);
+    if (rev == 0) {
+        return sort_cmp_normal(min, cur, sort);
     } else {
-        return sort_compare_reversed(minimum, current, sort);
+        return sort_compare_rev(min, cur, sort);
     }
 }
 
-void select_sort(linked_list_t **head, sort_type_t type, int is_reversed)
+linked_list_t **cmp_res(linked_list_t **cur, linked_list_t **min, int res_cmp)
+{
+    if (res_cmp == 1) {
+        min = cur;
+    }
+    return min;
+}
+
+void select_sort(linked_list_t **head, sort_type_t type, int rev)
 {
     linked_list_t **first_unsorted_node = head;
-    linked_list_t **minimum = head;
-    linked_list_t **current = head;
+    linked_list_t **min = head;
+    linked_list_t **cur = head;
     int result_compare = 0;
 
     while ((*first_unsorted_node) != NULL) {
-        minimum = first_unsorted_node;
-        while ((*current) != NULL) {
-            result_compare = sort_compare((*minimum), (*current), type, is_reversed);
-            if (result_compare == 1) {
-                minimum = current;
-            }
-            current = &(*current)->next;
+        min = first_unsorted_node;
+        while ((*cur) != NULL) {
+            result_compare = sort_cmp((*min), (*cur), type, rev);
+            min = cmp_res(cur, min, result_compare);
+            cur = &(*cur)->next;
         }
-        swap_in_list(first_unsorted_node, minimum);
+        swap_in_list(first_unsorted_node, min);
         first_unsorted_node = &(*first_unsorted_node)->next;
-        current = first_unsorted_node;
+        cur = first_unsorted_node;
     }
 }

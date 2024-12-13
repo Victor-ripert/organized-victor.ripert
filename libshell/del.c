@@ -14,7 +14,7 @@ void del(void *data, char **args)
     int ref;
     int i = 0;
 
-    while(args[i] != NULL) {
+    while (args[i] != NULL) {
         ref = str_to_nbr(args[i]);
         delete_node(head, ref);
         i++;

@@ -15,7 +15,7 @@ material_t material_type(char *type)
         {"DEVICES", DEVICES},
         {"PROCESSOR", PROCESSOR},
         {"SENSOR", SENSOR},
-        {"WIRES", WIRES},
+        {"WIRE", WIRE},
     };
 
     for (int i = 0; i < 5; i++) {

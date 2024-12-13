@@ -1,7 +1,7 @@
 /*
 ** EPITECH PROJECT, 2024
 ** my_put_nbr
-** File description:str_to_nbr.c
+** File description:
 ** desc
 */
 #include "bootstrap.h"

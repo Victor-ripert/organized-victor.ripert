@@ -18,12 +18,10 @@ void add(void *data, char **args)
 
     while (args[i] != NULL) {
         type = material_type(args[i]);
-        if (args[i + 1] != NULL) {
+        if (args[i + 1] != NULL && type != UNKNOWN) {
             argument = my_str_dup(args[i + 1]);
             id = find_biggest_id(*head) + 1;
-            if (type != UNKNOWN) {
-                push_to_list(head, argument, type, id);
-            }
+            push_to_list(head, argument, type, id);
         }
         i += 2;
     }

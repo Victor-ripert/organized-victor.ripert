@@ -25,7 +25,7 @@ typedef enum material_s {
     DEVICES = 1,
     PROCESSOR = 2,
     SENSOR = 3,
-    WIRES = 4,
+    WIRE = 4,
     UNKNOWN = 5
 } material_t;
 

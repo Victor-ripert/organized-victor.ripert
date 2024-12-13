@@ -16,10 +16,8 @@ void sort(void *data, char **args)
     sort_type_t sort_type;
 
     if (args[0] != NULL) {
-        if (args[1] != NULL) {
-            if (args[1][0] == '-') {
-                is_reversed = 1;
-            }
+        if (args[1] != NULL && args[1][0] == '-') {
+            is_reversed = 1;
         }
         sort_type = sort_material_type(args[0]);
         select_sort(head, sort_type, is_reversed);

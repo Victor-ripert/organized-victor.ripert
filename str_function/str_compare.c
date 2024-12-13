@@ -10,7 +10,10 @@
 
 int str_compare(char *str, char *compare)
 {
-    for (int i = 0; str[i] != '\0' && compare[i] != 0; i++) {
+    if (my_strlen(str) != my_strlen(compare)) {
+        return 0;
+    }
+    for (int i = 0; str[i] != '\0' && compare[i] != '\0'; i++) {
         if (str[i] != compare[i]) {
             return 0;
         }

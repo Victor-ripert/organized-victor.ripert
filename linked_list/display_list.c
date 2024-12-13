@@ -11,7 +11,6 @@
 void display_list(linked_list_t *begin)
 {
     linked_list_t *temp;
-    char *material_type;
 
     temp = begin;
     while (temp != NULL) {

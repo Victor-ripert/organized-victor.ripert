@@ -16,7 +16,7 @@ char *material_to_str(material_t type)
         {"DEVICES", DEVICES},
         {"PROCESSOR", PROCESSOR},
         {"SENSOR", SENSOR},
-        {"WIRES", WIRES},
+        {"WIRE", WIRE},
     };
 
     for (int i = 0; i < 5; i++) {
