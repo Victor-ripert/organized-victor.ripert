@@ -13,6 +13,12 @@ void delete_node(linked_list_t **begin, int ref)
     linked_list_t *temp;
 
     temp = *begin;
+    if ((*begin)->next == NULL && (*begin)->previous == NULL) {
+        if ((*begin)->id == ref) {
+            (*begin) = NULL;
+            return;
+        }
+    }
     while (temp != NULL) {
         if (temp->id == ref) {
             display_node_del(temp);

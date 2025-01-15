@@ -13,15 +13,8 @@
 int main(void)
 {
     int x = 1;
-    char *first_node = "first_node";
-    linked_list_t *list = malloc(sizeof(linked_list_t));
+    linked_list_t *list = NULL;
 
-    my_putstr("Changer \"WIRES\" -> \"WIRE\"\n");
-    list->data = first_node;
-    list->next = NULL;
-    list->previous = NULL;
-    list->type = ACTUATOR;
-    list->id = 0;
     while (x != 0) {
         x = workshop_shell(&list);
     }

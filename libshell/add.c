@@ -22,6 +22,8 @@ void add(void *data, char **args)
             argument = my_str_dup(args[i + 1]);
             id = find_biggest_id(*head) + 1;
             push_to_list(head, argument, type, id);
+        } else {
+            return;
         }
         i += 2;
     }

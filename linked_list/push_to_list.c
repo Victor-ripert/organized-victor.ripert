@@ -18,6 +18,11 @@ void push_to_list(linked_list_t **begin, void *data, material_t type, int id)
     temp->id = id;
     temp->previous = NULL;
     temp->next = *begin;
+    if ((*begin == NULL)) {
+        (*begin) = temp;
+        display_node_add(temp);
+        return;
+    }
     if ((*begin)->data == NULL) {
         (*begin) = temp;
     } else {
